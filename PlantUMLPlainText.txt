@@ -1,0 +1,16 @@
+Class Player {
+    + chips : Map <>
+    + VPoints : Integer
+
+    + BuyCard()
+}
+
+Class Card {
+    + VPointVal : Integer
+    + Cost : 
+    
+    + Hide()
+    + Show()
+    
+}
+
