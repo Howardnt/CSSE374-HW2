@@ -1,5 +1,3 @@
-package hw2ThreeLayerDesign;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -20,7 +18,7 @@ public class CardData {
                 cards.put(cost, value);
             }
         } catch (IOException e) {
-            System.out.println("Error reading card data: check project folder");
+            System.out.println("Error reading card data: " + e);
         }
     }
 
@@ -28,17 +26,20 @@ public class CardData {
         return cards;
     }
 
-	public void removeCurrentCard(String costString) {
-		cards.remove(costString);
-		
-	}
-	
-	public void clearCards() {
-	    if (cards != null) {
-	        cards.clear();
-	    } else {
-	        cards = new HashMap<>();
-	    }
-	}
+    public void removeCurrentCard(String costString) {
+        cards.remove(costString);
+    }
 
+    // NEW: For Replay/Undo
+    public void addCardBack(String costString, int vp) {
+        cards.put(costString, vp);
+    }
+
+    public void clearCards() {
+        if (cards != null) {
+            cards.clear();
+        } else {
+            cards = new HashMap<>();
+        }
+    }
 }
