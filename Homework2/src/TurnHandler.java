@@ -133,7 +133,7 @@ public class TurnHandler {
 
 	public boolean checkWin(Player player1, Player player2, CardData cardData) {
 		if (cardData.getCardData().isEmpty()) return true;
-		if (player1.vp >= 1 || player2.vp >= 1) return true;
+		if (player1.vp >= 20 || player2.vp >= 20) return true;
 		return false;
 	}
 
